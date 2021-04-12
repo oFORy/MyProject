@@ -1,0 +1,61 @@
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+.modal {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+    overflow: auto;
+
+    background-color: rgba(33, 47, 30, 0.9);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+.modal.show {
+    display: flex;
+}
+
+.modal__dialog {
+    margin: auto;
+    width: 800px;
+    height: 800px;
+    position: relative;
+    transform: scale(0);
+    transition: transform .2s linear;
+    overflow: hidden;
+}
+.modal__dialog img {
+    transition: transform 5s;
+}
+.modal__dialog:hover img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.modal__close {
+    width: 34px;
+    height: 39px;
+    padding: 0;
+
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    position: absolute;
+    top: .9rem;
+    right: 1rem;
+    z-index: 1;
+
+    transition: transform .2s linear;
+}
+.modal__close:hover {
+        transform: translateY(-3px);
+    }
+.modal__close:focus {
+    outline: none;
+}
